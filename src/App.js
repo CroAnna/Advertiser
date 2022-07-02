@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+// import Oglas from "./Components/Oglas";
+import Oglasi from "./Components/Oglasi";
 
 function App() {
+  const [oglasi, setOglase] = useState([
+    {
+      name: "BMW GS310",
+      category: "bike",
+      price: "35000€",
+      photoUrl:
+        "https://mcn-images.bauersecure.com/wp-images/4552/bmw-g310gs-40-years.jpg",
+    },
+    {
+      name: "Tele",
+      category: "animal",
+      price: "1000€",
+      photoUrl:
+        "https://i0.hippopx.com/photos/1014/166/417/calf-cow-nature-beef-preview.jpg",
+    },
+  ]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Recicki oglasnik</h1>
+      <Oglasi oglasi={oglasi} />
     </div>
   );
 }

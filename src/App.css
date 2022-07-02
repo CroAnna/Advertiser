@@ -1,38 +1,78 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Splash&display=swap");
+
+:root {
+  --darkerblue: #355c7d;
+  --darkblue: #3a7b99;
+  --mediumblue: #70afce;
+  --lightblue: #c7e6f0;
+  --white: #ffffff;
+  --whitebg: #ebebeb;
+  --orange: #ffa43b;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--whitebg);
+}
+
+h1 {
+  font-family: "Splash", cursive;
+  font-size: 70px;
+  padding: 20px;
+  text-align: center;
+  color: var(--darkerblue);
+}
+
+h2 {
+  font-family: "Mulish", sans-serif;
+  font-size: 30px;
+  padding: 15px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.oglasi {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /*dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira*/
 }
 
-.App-link {
-  color: #61dafb;
+.oglas {
+  width: 300px;
+  height: 400px;
+  border-radius: 15px;
+  background-color: var(--white);
+  border: var(--darkerblue) 2px solid;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 80%;
+  padding: 10px;
+}
+
+.najnovijiOglasi {
+  background-color: var(--lightblue);
+  padding: 15px;
+  width: 90%;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.dropdown {
+  float: right;
+  display: block;
+  width: 120px;
+  height: 40px;
 }
