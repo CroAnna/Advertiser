@@ -22,9 +22,7 @@ function App() {
     },
   ]);
 
-  const [gumb, setGumb] = useState(false); // VELI DA SE NEMRE CONST MIJENJAT AMMMMM...
-  // const [gumb, setGumb] = useState("FALSE");
-  console.log(gumb);
+  const [gumb, setGumb] = useState(false);
 
   return (
     <div className="App">
