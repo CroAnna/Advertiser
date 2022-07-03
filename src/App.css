@@ -4,10 +4,11 @@
   --darkerblue: #355c7d;
   --darkblue: #3a7b99;
   --mediumblue: #70afce;
-  --lightblue: #c7e6f0;
+  --lightblue: #c3dee7;
   --white: #ffffff;
-  --whitebg: #ebebeb;
+  --whitebg: #f1f1f1;
   --orange: #ffa43b;
+  --darkgrey: #2e2e2e;
 }
 
 * {
@@ -70,9 +71,44 @@ img {
   border-radius: 30px;
 }
 
-.dropdown {
-  float: right;
-  display: block;
-  width: 120px;
+#filtration {
+  right: 150px;
+  width: 180px;
   height: 40px;
+  font-size: large;
+  border-radius: 5px;
+  background-color: var(--darkerblue);
+  color: var(--white);
+  padding: 10px;
+  margin: 15px;
+  float: right;
+  position: absolute;
+}
+
+button {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--darkerblue),
+    var(--darkblue)
+  );
+  color: var(--white);
+  padding: 15px 20px;
+  margin: 15px;
+  font-size: 2rem;
+  margin: 20px auto;
+  border-radius: 12px;
+  display: block;
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  margin: 20px auto;
+  width: 40%;
+  height: 50px;
+  border: var(--darkerblue) 2px solid;
+}
+
+.hidden {
+  visibility: hidden;
 }
