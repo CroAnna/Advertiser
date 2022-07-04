@@ -23,12 +23,13 @@ const Oglasi = ({ oglasi }) => {
         </div>
 
         <div className="oglasi">
-          {oglasi.map((oglas) => (
+          {oglasi.map((oglas, index) => (
             <Oglas
               name={oglas.name}
               category={oglas.category}
               price={oglas.price}
-              key={oglas.name} // nez jel ovo oke
+              //key={oglas.name} // nez jel ovo oke
+              key={index}
               photoUrl={oglas.photoUrl}
             />
           ))}

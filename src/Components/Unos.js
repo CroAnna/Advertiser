@@ -1,8 +1,50 @@
 import React from "react";
 
-const Unos = ({ gumb, setGumb }) => {
+const Unos = ({
+  gumb,
+  setGumb,
+  inputTextName,
+  setInputTextName,
+  oglasi,
+  setOglase,
+  inputTextCategory,
+  setInputTextCategory,
+  inputTextPrice,
+  setInputTextPrice,
+  inputTextPhotoURL,
+  setInputTextPhotoURL,
+}) => {
   const buttonHandler = () => {
     setGumb(true); // it will be hidden
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log("kliknut submit");
+
+    setOglase([
+      ...oglasi,
+      {
+        name: inputTextName,
+        category: inputTextCategory,
+        price: inputTextPrice,
+        photoUrl: inputTextPhotoURL,
+      },
+    ]);
+  };
+
+  // jel moguce ove preko 1 fje napravit?
+  const nameHandler = (e) => {
+    setInputTextName(e.target.value);
+  };
+  const categoryHandler = (e) => {
+    setInputTextCategory(e.target.value);
+  };
+  const priceHandler = (e) => {
+    setInputTextPrice(e.target.value);
+  };
+  const photoURLHandler = (e) => {
+    setInputTextPhotoURL(e.target.value);
   };
 
   return (
@@ -19,15 +61,37 @@ const Unos = ({ gumb, setGumb }) => {
       <div className={gumb ? "" : "hidden"}>
         <form>
           <h2>Novi oglas </h2>
-          <input type="text" placeholder="Name" id="inputName" />
-          <input type="text" placeholder="Category" id="inputCategory" />
-          <input type="number" placeholder="Price" id="inputPrice" />
-          <input type="URL" placeholder="Photo URL" id="inputPhotoURL" />
+          <input
+            type="text"
+            placeholder="Name"
+            id="inputName"
+            onChange={nameHandler}
+          />
+          <input
+            type="text"
+            placeholder="Category"
+            id="inputCategory"
+            onChange={categoryHandler}
+          />
+          <input
+            type="text"
+            placeholder="Price"
+            id="inputPrice"
+            onChange={priceHandler}
+          />
+          <input
+            type="text"
+            placeholder="Photo URL"
+            id="inputPhotoURL"
+            onChange={photoURLHandler}
+          />
           <div className="btns">
             <button type="reset" className="cancelBtn ">
               Cancel
             </button>
-            <button type="submit">Submit</button>
+            <button onClick={submitHandler} type="button">
+              Submit
+            </button>
           </div>
         </form>
       </div>

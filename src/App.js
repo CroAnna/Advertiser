@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 // import Oglas from "./Components/Oglas";
 import Oglasi from "./Components/Oglasi";
@@ -22,13 +22,35 @@ function App() {
     },
   ]);
 
+  const [inputTextName, setInputTextName] = useState("");
+  const [inputTextCategory, setInputTextCategory] = useState("");
+  const [inputTextPrice, setInputTextPrice] = useState("");
+  const [inputTextPhotoURL, setInputTextPhotoURL] = useState("");
+
   const [gumb, setGumb] = useState(false);
+
+  useEffect(() => {
+    setOglase(oglasi);
+  }, [oglasi]); // run when oglasi array changes
 
   return (
     <div className="App">
       <h1>Recicki oglasnik</h1>
       <Oglasi oglasi={oglasi} />
-      <Unos gumb={gumb} setGumb={setGumb} />
+      <Unos
+        gumb={gumb}
+        setGumb={setGumb}
+        inputTextName={inputTextName}
+        setInputTextName={setInputTextName}
+        oglasi={oglasi}
+        setOglase={setOglase}
+        inputTextCategory={inputTextCategory}
+        setInputTextCategory={setInputTextCategory}
+        inputTextPrice={inputTextPrice}
+        setInputTextPrice={setInputTextPrice}
+        inputTextPhotoURL={inputTextPhotoURL}
+        setInputTextPhotoURL={setInputTextPhotoURL}
+      />
     </div>
   );
 }
