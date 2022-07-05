@@ -8,14 +8,14 @@ function App() {
   const [oglasi, setOglase] = useState([
     {
       name: "BMW GS310",
-      category: "bike",
+      category: "Bike",
       price: "35000€",
       photoUrl:
         "https://mcn-images.bauersecure.com/wp-images/4552/bmw-g310gs-40-years.jpg",
     },
     {
       name: "Tele",
-      category: "animal",
+      category: "Animal",
       price: "1000€",
       photoUrl:
         "https://i0.hippopx.com/photos/1014/166/417/calf-cow-nature-beef-preview.jpg",

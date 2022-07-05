@@ -126,14 +126,20 @@ button:hover {
   border: var(--darkerblue) 2px solid;
 }
 
-input {
+input,
+form select {
   display: block;
   margin: 10px auto 40px auto;
   width: 90%;
   height: 50px;
   border: var(--darkerblue) 2px solid;
-  padding: 20px;
+  padding-left: 20px;
   font-size: larger;
+  color: var(--darkerblue);
+}
+
+::placeholder {
+  color: var(--darkerblue);
 }
 
 .hidden {

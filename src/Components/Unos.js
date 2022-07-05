@@ -67,18 +67,23 @@ const Unos = ({
             id="inputName"
             onChange={nameHandler}
           />
-          <input
-            type="text"
-            placeholder="Category"
-            id="inputCategory"
-            onChange={categoryHandler}
-          />
+          <select name="categories" id="categories" onChange={categoryHandler}>
+            <option hidden value="">
+              Category
+            </option>
+            <option value="All">All</option>
+            <option value="Animal">Animal</option>
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+          </select>
+
           <input
             type="text"
             placeholder="Price"
             id="inputPrice"
             onChange={priceHandler}
           />
+
           <input
             type="text"
             placeholder="Photo URL"
