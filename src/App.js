@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-// import Oglas from "./Components/Oglas";
 import Oglasi from "./Components/Oglasi";
 import Unos from "./Components/Unos";
 
@@ -22,21 +21,46 @@ function App() {
     },
   ]);
 
+  const [filtOglasi, setFiltOglasi] = useState([]);
+
   const [inputTextName, setInputTextName] = useState("");
   const [inputTextCategory, setInputTextCategory] = useState("");
   const [inputTextPrice, setInputTextPrice] = useState("");
   const [inputTextPhotoURL, setInputTextPhotoURL] = useState("");
 
   const [gumb, setGumb] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState("All");
 
   useEffect(() => {
-    setOglase(oglasi);
-  }, [oglasi]); // run when oglasi array changes
+    function filterHandler() {
+      console.log("filterhandler");
+
+      switch (selectedFilter) {
+        // new array filtOglasi fills with the ones we want (based on chosen category)
+        case "Cars": {
+          setFiltOglasi(oglasi.filter((oglas) => oglas.category === "Car"));
+          break;
+        }
+        case "Bikes": {
+          setFiltOglasi(oglasi.filter((oglas) => oglas.category === "Bike"));
+          break;
+        }
+        case "Animals": {
+          setFiltOglasi(oglasi.filter((oglas) => oglas.category === "Animal"));
+          break;
+        }
+        default: {
+          setFiltOglasi(oglasi);
+        }
+      }
+    }
+    filterHandler();
+  }, [oglasi, selectedFilter]); // run when oglasi array or selected filter changes
 
   return (
     <div className="App">
       <h1>Recicki oglasnik</h1>
-      <Oglasi oglasi={oglasi} />
+      <Oglasi setSelectedFilter={setSelectedFilter} filtOglasi={filtOglasi} />
       <Unos
         gumb={gumb}
         setGumb={setGumb}

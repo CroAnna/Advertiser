@@ -1,38 +1,39 @@
 import React from "react";
 import Oglas from "./Oglas";
 
-// unos oglasa preko neke input forme - na gumb DODAJ OGLAS se otkrije taj dio stranice
-// odabir kategorije oglasa - dropdown (motori, kompjuteri i sl)
-// filtracija pomocu kategorije
-// prikaz oglasa (slika i detalji) - probaj kad se klikne na nju da se otvori onak ko prozor koji je inace sakriven preko cijele stranice
-// horizontalni scroll oglasa
-// light/dark color theme
+const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
+  const filterHandler = (e) => {
+    setSelectedFilter(e.target.value);
+  };
 
-const Oglasi = ({ oglasi }) => {
   return (
     <div>
       <div className="najnovijiOglasi">
         <div>
-          <select name="filtration" id="filtration">
-            <option value="all">All</option>
-            <option value="animals">Animals</option>
-            <option value="cars">Cars</option>
-            <option value="bikes">Bikes</option>
+          <select name="filtration" id="filtration" onChange={filterHandler}>
+            <option value="All">All</option>
+            <option value="Animals">Animals</option>
+            <option value="Cars">Cars</option>
+            <option value="Bikes">Bikes</option>
           </select>
           <h2>Najnoviji oglasi</h2>
         </div>
 
         <div className="oglasi">
-          {oglasi.map((oglas, index) => (
-            <Oglas
-              name={oglas.name}
-              category={oglas.category}
-              price={oglas.price}
-              //key={oglas.name} // nez jel ovo oke
-              key={index}
-              photoUrl={oglas.photoUrl}
-            />
-          ))}
+          {filtOglasi.map(
+            (
+              oglas,
+              index // goes through filtered array
+            ) => (
+              <Oglas
+                name={oglas.name}
+                category={oglas.category}
+                price={oglas.price}
+                key={index}
+                photoUrl={oglas.photoUrl}
+              />
+            )
+          )}
         </div>
       </div>
     </div>

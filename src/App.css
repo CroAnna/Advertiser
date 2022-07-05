@@ -1,3 +1,14 @@
+/* TODO
+-unos oglasa preko neke input forme - na gumb DODAJ OGLAS se otkrije taj dio stranice - done
+-odabir kategorije oglasa - dropdown (motori, kompjuteri i sl) - done
+-filtracija pomocu kategorije - done
+-prikaz oglasa (slika i detalji) - probaj kad se klikne na nju da se otvori onak ko prozor koji je inace sakriven preko cijele stranice
+-horizontalni scroll oglasa 
+-light/dark color theme
+-dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira
+-jel moguce inputhandlere preko 1 fje napravit?
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Mulish&family=Splash&display=swap");
 
 :root {
@@ -22,6 +33,7 @@
 
 body {
   background-color: var(--whitebg);
+  overflow: scroll;
 }
 
 h1 {
@@ -133,7 +145,7 @@ form select {
   width: 90%;
   height: 50px;
   border: var(--darkerblue) 2px solid;
-  padding-left: 20px;
+  padding-left: 25px;
   font-size: larger;
   color: var(--darkerblue);
 }
