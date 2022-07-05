@@ -99,11 +99,11 @@ img {
 }
 
 button {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to bottom right,
     var(--darkerblue),
     var(--darkblue)
-  );
+  ); */
   color: var(--white);
   padding: 15px 20px;
   font-size: 1.7rem;
@@ -112,6 +112,12 @@ button {
   margin: 0 10px;
   display: block;
   cursor: pointer;
+  transition: all 1s ease;
+  background-color: var(--darkblue);
+}
+
+button:hover {
+  background-color: var(--darkerblue);
 }
 
 .btns {
@@ -124,11 +130,6 @@ button {
 .btn-middle {
   margin: 20px auto;
   width: fit-content;
-}
-
-button:hover {
-  transform: scale(1.05);
-  transition: transform 400ms;
 }
 
 .cancelBtn {
@@ -165,4 +166,21 @@ form {
   padding: 5px;
   border-radius: 30px;
   background-color: var(--lightgrey);
+}
+
+.theme {
+  float: right;
+  position: absolute;
+  right: 0;
+  width: 70px;
+  margin-top: 40px;
+  margin-right: 50px;
+  background-color: var(--mediumblue);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.theme:hover {
+  background-color: var(--orange);
+  cursor: pointer;
 }

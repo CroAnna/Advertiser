@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Oglasi from "./Components/Oglasi";
 import Unos from "./Components/Unos";
+import Header from "./Components/Header";
 
 function App() {
   const [oglasi, setOglase] = useState([
@@ -33,8 +34,6 @@ function App() {
 
   useEffect(() => {
     function filterHandler() {
-      console.log("filterhandler");
-
       switch (selectedFilter) {
         // new array filtOglasi fills with the ones we want (based on chosen category)
         case "Cars": {
@@ -58,8 +57,8 @@ function App() {
   }, [oglasi, selectedFilter]); // run when oglasi array or selected filter changes
 
   return (
-    <div className="App">
-      <h1>Recicki oglasnik</h1>
+    <div className="App ">
+      <Header />
       <Oglasi setSelectedFilter={setSelectedFilter} filtOglasi={filtOglasi} />
       <Unos
         gumb={gumb}
