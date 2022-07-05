@@ -4,7 +4,7 @@
 -filtracija pomocu kategorije - done
 -prikaz oglasa (slika i detalji) - probaj kad se klikne na nju da se otvori onak ko prozor koji je inace sakriven preko cijele stranice
 -horizontalni scroll oglasa 
--light/dark color theme
+-light/dark color theme --> styled components
 -dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira
 -jel moguce inputhandlere preko 1 fje napravit?
 */
@@ -99,11 +99,6 @@ img {
 }
 
 button {
-  /* background-image: linear-gradient(
-    to bottom right,
-    var(--darkerblue),
-    var(--darkblue)
-  ); */
   color: var(--white);
   padding: 15px 20px;
   font-size: 1.7rem;
