@@ -7,6 +7,7 @@
 -light/dark color theme --> styled components
 -dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira
 -jel moguce inputhandlere preko 1 fje napravit?
+-dodaj show info gumb (preko routea) koji preko indexa pokazuje odabrani oglas i ostale info o njemu koje se unose npr adresa, informacije dodatne i sl, a da se ne vidi na pocetnoj - ikone s font awesomea npr lokacija, telefon itd
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Mulish&family=Splash&display=swap");
@@ -14,25 +15,14 @@
 :root {
   --bg: #161b22;
   --darkergrey: #082032;
-  --darkgrey: #2c394b;
-  --mediumgrey: #334756;
+  --darkgrey: #1a1e24;
+  --mediumgrey2: #29343d;
+  --mediumgrey: #232b33;
   --lightgrey: #d2d2d2;
   --mediumorange: #ff4c29;
   --lightorange: #fad1ca;
   --white: #ffffff;
 }
-
-/* :root {
-  --bg: #355c7d;
-  --darkgrey: #3a7b99;
-  --mediumorange: #70afce;
-  --lightgrey: #c3dee7;
-  --white: #ffffff;
-  --whitebg: #f1f1f1;
-  --mediumgrey: #ffa43b;
-  --lightorange: #dddddd;
-  --darkgrey: #2e2e2e;
-} */
 
 * {
   margin: 0;
@@ -43,7 +33,7 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--darkgrey);
   overflow: scroll;
 }
 
@@ -52,18 +42,20 @@ h1 {
   font-size: 70px;
   padding: 20px;
   text-align: center;
-  color: var(--lightgrey);
+  color: var(--lightorange);
 }
 
 h2 {
   font-size: 30px;
   padding: 15px;
   text-align: center;
+  color: var(--white);
 }
 
 p {
   font-family: "Mulish", sans-serif;
   font-size: 20px;
+  color: var(--white);
 }
 
 .oglasi {
@@ -75,7 +67,7 @@ p {
   width: 300px;
   height: 400px;
   border-radius: 15px;
-  background-color: var(--white);
+  background-color: var(--mediumgrey2);
   justify-content: space-around;
   text-align: center;
   margin: 5px;
@@ -87,7 +79,7 @@ img {
 }
 
 .najnovijiOglasi {
-  background-color: var(--lightgrey);
+  background-color: var(--mediumgrey);
   padding: 15px;
   width: 90%;
   margin: auto;
@@ -118,7 +110,7 @@ button {
   display: block;
   cursor: pointer;
   transition: all 1s ease;
-  background-color: var(--darkergrey);
+  background-color: var(--li);
   color: var(--white);
 }
 
@@ -137,9 +129,10 @@ button:hover {
 .btn-middle {
   margin: 20px auto;
   width: fit-content;
-  background-color: var(--darkergrey);
+  background-color: var(--lightgrey);
   border: var(--mediumorange) 2px solid;
-  /* color: var(--darkgrey); */
+  color: var(--darkgrey);
+  font-weight: bold;
 }
 
 .cancelBtn {
