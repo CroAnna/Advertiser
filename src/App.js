@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./App.scss";
 import Oglasi from "./Components/Oglasi";
 import Unos from "./Components/Unos";
 import Header from "./Components/Header";

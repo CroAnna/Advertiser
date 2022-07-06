@@ -60,7 +60,7 @@ const Unos = ({
       </div>
       <div className={gumb ? "" : "hidden"}>
         <form>
-          <h2>Novi oglas </h2>
+          <h2 className="new-title">Novi oglas </h2>
           <input
             type="text"
             placeholder="Name"

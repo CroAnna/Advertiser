@@ -8,6 +8,7 @@
 -dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira
 -jel moguce inputhandlere preko 1 fje napravit?
 -dodaj show info gumb (preko routea) koji preko indexa pokazuje odabrani oglas i ostale info o njemu koje se unose npr adresa, informacije dodatne i sl, a da se ne vidi na pocetnoj - ikone s font awesomea npr lokacija, telefon itd
+-pretvori css u scss
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Mulish&family=Splash&display=swap");
@@ -50,6 +51,10 @@ h2 {
   padding: 15px;
   text-align: center;
   color: var(--white);
+
+  &.new-title {
+    color: var(--darkergrey);
+  }
 }
 
 p {
@@ -76,6 +81,7 @@ p {
 img {
   width: 80%;
   padding: 10px;
+  border-radius: 15px;
 }
 
 .najnovijiOglasi {
@@ -84,20 +90,6 @@ img {
   width: 90%;
   margin: auto;
   border-radius: 30px;
-}
-
-#filtration {
-  right: 150px;
-  width: 180px;
-  height: 40px;
-  font-size: large;
-  border-radius: 5px;
-  background-color: var(--mediumorange);
-  color: var(--white);
-  padding: 10px;
-  margin: 15px;
-  float: right;
-  position: absolute;
 }
 
 button {
@@ -110,13 +102,35 @@ button {
   display: block;
   cursor: pointer;
   transition: all 1s ease;
-  background-color: var(--li);
+  background-color: var(--darkergrey);
   color: var(--white);
-}
 
-button:hover {
-  background-color: var(--mediumorange);
-  color: var(--lightgrey);
+  &.more-info {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &.cancelBtn {
+    background-color: var(--white);
+    background-image: none;
+    color: var(--darkgrey);
+    border: var(--bg) 2px solid;
+  }
+
+  &.btn-middle {
+    margin: 20px auto;
+    width: fit-content;
+    background-color: var(--lightgrey);
+    border: var(--mediumorange) 2px solid;
+    color: var(--darkgrey);
+    font-weight: bold;
+  }
+
+  &:hover {
+    // mora bit skroz dole jer inace ne dela
+    background-color: var(--mediumorange);
+    color: var(--lightgrey);
+  }
 }
 
 .btns {
@@ -124,22 +138,6 @@ button:hover {
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-}
-
-.btn-middle {
-  margin: 20px auto;
-  width: fit-content;
-  background-color: var(--lightgrey);
-  border: var(--mediumorange) 2px solid;
-  color: var(--darkgrey);
-  font-weight: bold;
-}
-
-.cancelBtn {
-  background-color: var(--white);
-  background-image: none;
-  color: var(--darkgrey);
-  border: var(--bg) 2px solid;
 }
 
 input,
@@ -152,6 +150,21 @@ form select {
   padding-left: 25px;
   font-size: larger;
   color: var(--bg);
+}
+
+#filtration {
+  right: 150px;
+  width: 180px;
+  height: 50px;
+  font-size: large;
+  border-radius: 5px;
+  background-color: var(--mediumorange);
+  color: var(--white);
+  padding: 5px;
+  margin: 15px;
+  float: right;
+  position: absolute;
+  border: var(--lightgrey) 3px solid;
 }
 
 ::placeholder {
@@ -181,9 +194,9 @@ form {
   background-color: var(--lightgrey);
   border-radius: 50%;
   transition: all 0.25s ease;
-}
 
-.theme:hover {
-  background-color: var(--mediumorange);
-  cursor: pointer;
+  &:hover {
+    background-color: var(--mediumorange);
+    cursor: pointer;
+  }
 }
