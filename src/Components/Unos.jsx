@@ -91,10 +91,10 @@ const Unos = ({
             onChange={photoURLHandler}
           />
           <div className="btns">
-            <button type="reset" className="cancelBtn ">
+            <button type="reset" className="cancelBtn">
               Cancel
             </button>
-            <button onClick={submitHandler} type="button">
+            <button onClick={submitHandler} type="button" className="submitBtn">
               Submit
             </button>
           </div>
