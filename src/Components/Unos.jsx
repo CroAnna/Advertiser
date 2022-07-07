@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Unos = ({
   gumb,
@@ -15,7 +17,7 @@ const Unos = ({
   setInputTextPhotoURL,
 }) => {
   const buttonHandler = () => {
-    setGumb(true); // it will be hidden
+    setGumb(!gumb); // it will toggle
   };
 
   const submitHandler = (e) => {
@@ -91,8 +93,8 @@ const Unos = ({
             onChange={photoURLHandler}
           />
           <div className="btns">
-            <button type="reset" className="cancelBtn">
-              Cancel
+            <button type="button" className="cancelBtn" onClick={buttonHandler}>
+              <FontAwesomeIcon icon={faXmark} />
             </button>
             <button onClick={submitHandler} type="button" className="submitBtn">
               Submit
