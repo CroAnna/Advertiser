@@ -3,6 +3,7 @@ import "./App.scss";
 import Oglasi from "./Components/Oglasi";
 import Unos from "./Components/Unos";
 import Header from "./Components/Header";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   const [oglasi, setOglase] = useState([
@@ -38,18 +39,25 @@ function App() {
         // new array filtOglasi fills with the ones we want (based on chosen category)
         case "Cars": {
           setFiltOglasi(oglasi.filter((oglas) => oglas.category === "Car"));
+
+          // console.log(`filtrirani car: ${filtOglasi}`);
+
           break;
         }
         case "Bikes": {
           setFiltOglasi(oglasi.filter((oglas) => oglas.category === "Bike"));
+          // console.log(`filtrirani bike: ${filtOglasi}`);
           break;
         }
         case "Animals": {
           setFiltOglasi(oglasi.filter((oglas) => oglas.category === "Animal"));
+          // console.log(`filtrirani animal: ${filtOglasi}`);
+
           break;
         }
         default: {
           setFiltOglasi(oglasi);
+          // console.log(`filtrirani all: ${filtOglasi}`);
         }
       }
     }
@@ -57,24 +65,26 @@ function App() {
   }, [oglasi, selectedFilter]); // run when oglasi array or selected filter changes
 
   return (
-    <div className="App ">
-      <Header />
-      <Oglasi setSelectedFilter={setSelectedFilter} filtOglasi={filtOglasi} />
-      <Unos
-        gumb={gumb}
-        setGumb={setGumb}
-        inputTextName={inputTextName}
-        setInputTextName={setInputTextName}
-        oglasi={oglasi}
-        setOglase={setOglase}
-        inputTextCategory={inputTextCategory}
-        setInputTextCategory={setInputTextCategory}
-        inputTextPrice={inputTextPrice}
-        setInputTextPrice={setInputTextPrice}
-        inputTextPhotoURL={inputTextPhotoURL}
-        setInputTextPhotoURL={setInputTextPhotoURL}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="App ">
+        <Header />
+        <Oglasi setSelectedFilter={setSelectedFilter} filtOglasi={filtOglasi} />
+        <Unos
+          gumb={gumb}
+          setGumb={setGumb}
+          inputTextName={inputTextName}
+          setInputTextName={setInputTextName}
+          oglasi={oglasi}
+          setOglase={setOglase}
+          inputTextCategory={inputTextCategory}
+          setInputTextCategory={setInputTextCategory}
+          inputTextPrice={inputTextPrice}
+          setInputTextPrice={setInputTextPrice}
+          inputTextPhotoURL={inputTextPhotoURL}
+          setInputTextPhotoURL={setInputTextPhotoURL}
+        />
+      </div>
+    </BrowserRouter>
   );
 }
 

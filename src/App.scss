@@ -66,6 +66,36 @@ p {
 .oglasi {
   display: flex;
   /*dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira*/
+  position: relative;
+  overflow: hidden;
+  height: 410px;
+
+  .oglasi-map {
+    display: flex;
+    position: relative;
+    margin: auto 4%;
+  }
+}
+
+.arrow {
+  font-size: 50px;
+  position: absolute;
+  top: 40%;
+  padding: 20px;
+  cursor: pointer;
+  color: var(--lightgrey);
+
+  &.arr-left {
+    float: left;
+    left: 0;
+    z-index: 1;
+  }
+
+  &.arr-right {
+    float: right;
+    right: 0;
+    background-color: var(--mediumgrey);
+  }
 }
 
 .oglas {

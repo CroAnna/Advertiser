@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import Info from "./Info";
 
 const Oglas = ({ name, category, price, photoUrl }) => {
   return (
@@ -11,6 +12,7 @@ const Oglas = ({ name, category, price, photoUrl }) => {
       <img src={photoUrl} alt={name} />
       <button className="more-info">
         <FontAwesomeIcon icon={faCircleInfo} color="#ffffff" />
+        <Info />
       </button>
     </div>
   );

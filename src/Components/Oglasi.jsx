@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Oglas from "./Oglas";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
   const filterHandler = (e) => {
     setSelectedFilter(e.target.value);
   };
+
+  useEffect(() => {
+    // kad nema niceg u toj kategoriji
+    console.log(filtOglasi);
+    if (filtOglasi.length === 0) {
+      console.log("prazno");
+    }
+  }, [filtOglasi]);
 
   return (
     <div>
@@ -20,20 +30,28 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
         </div>
 
         <div className="oglasi">
-          {filtOglasi.map(
-            (
-              oglas,
-              index // goes through filtered array
-            ) => (
-              <Oglas
-                name={oglas.name}
-                category={oglas.category}
-                price={oglas.price}
-                key={index}
-                photoUrl={oglas.photoUrl}
-              />
-            )
-          )}
+          <div className="arrow arr-left">
+            <FontAwesomeIcon icon={faAngleLeft} />
+          </div>
+          <div className="oglasi-map">
+            {filtOglasi.map(
+              (
+                oglas,
+                index // goes through filtered array
+              ) => (
+                <Oglas
+                  name={oglas.name}
+                  category={oglas.category}
+                  price={oglas.price}
+                  key={index}
+                  photoUrl={oglas.photoUrl}
+                />
+              )
+            )}
+          </div>
+          <div className="arrow arr-right">
+            <FontAwesomeIcon icon={faAngleRight} />
+          </div>
         </div>
       </div>
     </div>
