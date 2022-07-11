@@ -97,7 +97,7 @@ function App() {
               </Fragment>
             }
           ></Route>
-          <Route path="/" element={<Info />}></Route>
+          <Route path="/info" element={<Info />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

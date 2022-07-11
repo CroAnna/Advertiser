@@ -1,5 +1,11 @@
+// import React from "react";
+
 const Info = () => {
-  return <h6>khm</h6>;
+  return (
+    <div>
+      <h2>booook</h2>
+    </div>
+  );
 };
 
 export default Info;

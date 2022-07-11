@@ -5,7 +5,7 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // <React.StrictMode> // da se ne ispisuje s console logom dvaput nesto
+  <App />
+  // </React.StrictMode>
 );

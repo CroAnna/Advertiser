@@ -47,6 +47,10 @@ h1 {
   color: var(--lightorange);
 }
 
+a {
+  text-decoration: none;
+}
+
 h2 {
   font-size: 30px;
   padding: 15px;
@@ -70,8 +74,11 @@ p {
   position: relative;
   overflow: hidden;
   height: 410px;
+  // width: 90%;
+  // justify-content: center;
 
   .oglasi-map {
+    left: 0px;
     display: flex;
     position: relative;
     margin: auto 4%;
@@ -81,10 +88,14 @@ p {
 .arrow {
   font-size: 50px;
   position: absolute;
-  top: 40%;
+
   padding: 20px;
   cursor: pointer;
   color: var(--lightgrey);
+  height: 410px;
+  display: flex;
+  align-items: center;
+  background-color: var(--mediumgrey);
 
   &.arr-left {
     float: left;
