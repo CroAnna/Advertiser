@@ -16,28 +16,6 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
     }
   }, [filtOglasi]);
 
-  const frame = useRef();
-
-  const clickLeft = () => {
-    // console.log("lijevi klik");
-    console.log(frame.current);
-    console.log(frame.current.style);
-    console.log(frame.current.style.left);
-    // frame.current.left += "30px";
-    frame.current.style.backgroundColor = "#ffb347";
-    frame.current.style.left -= "300px";
-    console.log(frame.current.style);
-    console.log(frame.current);
-  };
-
-  const clickRight = () => {
-    // console.log("lijevi klik");
-    console.log(frame.current);
-    // frame.current.left += "30px";
-    frame.current.style.backgroundColor = "#44d700";
-    frame.current.style.left += "300px";
-  };
-
   return (
     <div>
       <div className="najnovijiOglasi">
@@ -52,10 +30,10 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
         </div>
 
         <div className="oglasi">
-          <div className="arrow arr-left" onClick={clickLeft}>
+          <div className="arrow arr-left">
             <FontAwesomeIcon icon={faAngleLeft} />
           </div>
-          <div className="oglasi-map" ref={frame}>
+          <div className="oglasi-map">
             {filtOglasi.map(
               (
                 oglas,
@@ -71,7 +49,7 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
               )
             )}
           </div>
-          <div className="arrow arr-right" onClick={clickRight}>
+          <div className="arrow arr-right">
             <FontAwesomeIcon icon={faAngleRight} />
           </div>
         </div>
