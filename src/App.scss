@@ -3,7 +3,7 @@
 -odabir kategorije oglasa - dropdown (motori, kompjuteri i sl) - done
 -filtracija pomocu kategorije - done
 -prikaz oglasa (slika i detalji) - probaj kad se klikne na nju da se otvori onak ko prozor koji je inace sakriven preko cijele stranice
--horizontalni scroll oglasa 
+-horizontalni scroll oglasa
 -light/dark color theme --> styled components
 -dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira
 -jel moguce inputhandlere preko 1 fje napravit?
@@ -67,21 +67,18 @@ p {
   font-size: 20px;
   color: var(--white);
 }
-
+// OVO VRATI NA KRAJU i dodaj da je ovaj info udaljen od bottoma na svakom jednako
 .oglasi {
-  display: flex;
-  /*dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira*/
+  // display: flex;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   height: 410px;
-  // width: 90%;
-  // justify-content: center;
 
   .oglasi-map {
-    left: 0px;
-    display: flex;
+    // left: 0px;
+    // display: flex;
     position: relative;
-    margin: auto 4%;
+    // margin: auto 4%;
   }
 }
 
@@ -112,6 +109,7 @@ p {
 
 .oglas {
   width: 300px;
+  // width: 20px;
   height: 400px;
   border-radius: 15px;
   background-color: var(--mediumgrey2);
