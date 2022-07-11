@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "./App.scss";
 import Oglasi from "./Components/Oglasi";
 import Unos from "./Components/Unos";
 import Header from "./Components/Header";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Info from "./Components/Info";
 
 function App() {
   const [oglasi, setOglase] = useState([
@@ -68,21 +69,36 @@ function App() {
     <BrowserRouter>
       <div className="App ">
         <Header />
-        <Oglasi setSelectedFilter={setSelectedFilter} filtOglasi={filtOglasi} />
-        <Unos
-          gumb={gumb}
-          setGumb={setGumb}
-          inputTextName={inputTextName}
-          setInputTextName={setInputTextName}
-          oglasi={oglasi}
-          setOglase={setOglase}
-          inputTextCategory={inputTextCategory}
-          setInputTextCategory={setInputTextCategory}
-          inputTextPrice={inputTextPrice}
-          setInputTextPrice={setInputTextPrice}
-          inputTextPhotoURL={inputTextPhotoURL}
-          setInputTextPhotoURL={setInputTextPhotoURL}
-        />
+        <Routes>
+          <Route
+            index
+            path="/"
+            element={
+              <Fragment>
+                {/* ovak mozes vise komponenti metnat u 1 Route */}
+                <Oglasi
+                  setSelectedFilter={setSelectedFilter}
+                  filtOglasi={filtOglasi}
+                />
+                <Unos
+                  gumb={gumb}
+                  setGumb={setGumb}
+                  inputTextName={inputTextName}
+                  setInputTextName={setInputTextName}
+                  oglasi={oglasi}
+                  setOglase={setOglase}
+                  inputTextCategory={inputTextCategory}
+                  setInputTextCategory={setInputTextCategory}
+                  inputTextPrice={inputTextPrice}
+                  setInputTextPrice={setInputTextPrice}
+                  inputTextPhotoURL={inputTextPhotoURL}
+                  setInputTextPhotoURL={setInputTextPhotoURL}
+                />
+              </Fragment>
+            }
+          ></Route>
+          <Route path="/" element={<Info />}></Route>
+        </Routes>
       </div>
     </BrowserRouter>
   );
