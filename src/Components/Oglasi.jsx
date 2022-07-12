@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Oglas from "./Oglas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
@@ -19,24 +19,31 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1740,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
           infinite: true,
           dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1400,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          // initialSlide: ,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 800,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -58,14 +65,8 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
   }, [filtOglasi]);
 
   function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+    const { onClick, className, style } = props;
     return (
-      // <div
-      //   className={className}
-      //   style={{ ...style, display: "block", background: "red" }}
-      //   onClick={onClick}
-      // />
-
       <div className="arrow arr-right" onClick={onClick}>
         <FontAwesomeIcon icon={faAngleRight} />
       </div>

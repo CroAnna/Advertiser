@@ -67,49 +67,55 @@ p {
   font-size: 20px;
   color: var(--white);
 }
+
 // OVO VRATI NA KRAJU i dodaj da je ovaj info udaljen od bottoma na svakom jednako
+// probaj maknut onih 5 i nariktat da se uvijek skroz lijevo pomaknu jer mislim da to ne dela skroz dobro
+// makni tockice
 .oglasi {
-  // display: flex;
   position: relative;
-  // overflow: hidden;
-  height: 410px;
+  height: 430px;
+  text-align: left;
 
   .oglasi-map {
-    // left: 0px;
-    // display: flex;
     position: relative;
-    // margin: auto 4%;
+    // width: 80%;
   }
+}
+
+.slick-slider {
+  // react slick classname
+  display: flex;
 }
 
 .arrow {
   font-size: 50px;
-  position: absolute;
+  // position: fixed;
+  display: inline;
 
-  padding: 20px;
+  padding: 0px;
   cursor: pointer;
   color: var(--lightgrey);
   height: 410px;
   display: flex;
   align-items: center;
-  background-color: var(--mediumgrey);
+  // background-color: var(--mediumgrey);
+  background-color: var(--mediumorange);
+  z-index: 1;
+  // position: absolute;
 
   &.arr-left {
     float: left;
-    left: 0;
-    z-index: 1;
+    // left: 0;
   }
 
   &.arr-right {
     float: right;
     right: 0;
-    background-color: var(--mediumgrey);
   }
 }
 
 .oglas {
   width: 300px;
-  // width: 20px;
   height: 400px;
   border-radius: 15px;
   background-color: var(--mediumgrey2);
