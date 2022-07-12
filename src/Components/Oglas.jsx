@@ -10,7 +10,10 @@ const Oglas = ({ name, category, price, photoUrl }) => {
       <h2>{name}</h2>
       <p>Category: {category}</p>
       <p>Price: {price}</p>
-      <img src={photoUrl} alt={name} />
+      <div className="img-div">
+        <img src={photoUrl} alt={name} />
+      </div>
+
       <button className="more-info">
         <FontAwesomeIcon icon={faCircleInfo} color="#ffffff" />
         <Link to="/info"></Link>
