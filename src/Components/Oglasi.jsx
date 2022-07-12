@@ -14,6 +14,7 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     speed: 500,
+
     slidesToShow: 5,
     slidesToScroll: 5,
     initialSlide: 0,
@@ -32,7 +33,7 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          // initialSlide: ,
+          initialSlide: 1,
         },
       },
       {
@@ -58,16 +59,15 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
 
   useEffect(() => {
     // kad nema niceg u toj kategoriji
-    // console.log(filtOglasi);
     if (filtOglasi.length === 0) {
       // console.log("prazno");
     }
   }, [filtOglasi]);
 
   function SampleNextArrow(props) {
-    const { onClick, className, style } = props;
+    const { onClick } = props;
     return (
-      <div className="arrow arr-right" onClick={onClick}>
+      <div className="arrow" onClick={onClick}>
         <FontAwesomeIcon icon={faAngleRight} />
       </div>
     );
@@ -76,7 +76,7 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
   function SamplePrevArrow(props) {
     const { onClick } = props;
     return (
-      <div className="arrow arr-left" onClick={onClick}>
+      <div className="arrow" onClick={onClick}>
         <FontAwesomeIcon icon={faAngleLeft} />
       </div>
     );
@@ -96,8 +96,8 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
         </div>
         <div className="oglasi">
           <div className="oglasi-map">
-            <Slider {...settings}>
-              {/* we can very easily take the object and spread its properties down to a component as individual prop values using the object spread operator {...myPropObject}.  */}{" "}
+            <Slider {...settings} style={{ display: "flex" }}>
+              {/* overrides display: block from slick.css*/}
               {filtOglasi.map(
                 (
                   oglas,

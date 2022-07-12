@@ -78,40 +78,17 @@ p {
 
   .oglasi-map {
     position: relative;
-    // width: 80%;
   }
-}
-
-.slick-slider {
-  // react slick classname
-  display: flex;
 }
 
 .arrow {
   font-size: 50px;
-  // position: fixed;
-  display: inline;
-
-  padding: 0px;
+  padding: 20px;
   cursor: pointer;
   color: var(--lightgrey);
   height: 410px;
   display: flex;
   align-items: center;
-  // background-color: var(--mediumgrey);
-  background-color: var(--mediumorange);
-  z-index: 1;
-  // position: absolute;
-
-  &.arr-left {
-    float: left;
-    // left: 0;
-  }
-
-  &.arr-right {
-    float: right;
-    right: 0;
-  }
 }
 
 .oglas {
@@ -122,6 +99,11 @@ p {
   justify-content: space-around;
   text-align: center;
   margin: 5px;
+  position: relative;
+
+  & img {
+    margin: 0 auto;
+  }
 }
 
 img {
@@ -153,7 +135,9 @@ button {
 
   &.more-info {
     width: fit-content;
-    margin: 0 auto;
+    position: absolute;
+    bottom: 15px;
+    left: 35%;
   }
 
   &.cancelBtn {
