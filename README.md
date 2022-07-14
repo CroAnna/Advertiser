@@ -4,5 +4,6 @@
 - Add your ad (name, category from dropdown menu, price, photo, etc.) - required input fields
 - View more info of chosen ad
 
-In the project directory, you can run:
+T run:
+### `npm install`
 ### `npm start`
