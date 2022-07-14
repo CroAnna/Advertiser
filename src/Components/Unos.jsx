@@ -95,7 +95,6 @@ const Unos = ({
             <option hidden value="">
               Category
             </option>
-            <option value="All">All</option>
             <option value="Animal">Animal</option>
             <option value="Car">Car</option>
             <option value="Bike">Bike</option>
