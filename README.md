@@ -4,6 +4,8 @@
 - Add your ad (name, category from dropdown menu, price, photo, etc.) - required input fields
 - View more info of chosen ad
 
-T run:
-### `npm install`
-### `npm start`
+To run:
+
+`npm install`
+
+`npm start`
