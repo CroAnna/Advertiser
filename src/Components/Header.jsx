@@ -9,14 +9,6 @@ const Header = () => {
       <Link to="/">
         <h1>Oglasnik</h1>
       </Link>
-      <nav>
-        <NavLink exact="true" activeclassname="active" to="/">
-          Home
-        </NavLink>
-        <NavLink exact="true" activeclassname="active" to="./info">
-          Info
-        </NavLink>
-      </nav>
     </div>
   );
 };

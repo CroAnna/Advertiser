@@ -21,18 +21,25 @@ const Unos = ({
   };
 
   const submitHandler = (e) => {
-    e.preventDefault();
-    console.log("kliknut submit");
+    if (
+      inputTextName !== "" &&
+      inputTextCategory !== "" &&
+      inputTextPrice !== "" &&
+      inputTextPhotoURL !== ""
+    ) {
+      e.preventDefault();
+      console.log("sve ispunjeno --> kliknut submit");
 
-    setOglase([
-      ...oglasi,
-      {
-        name: inputTextName,
-        category: inputTextCategory,
-        price: inputTextPrice,
-        photoUrl: inputTextPhotoURL,
-      },
-    ]);
+      setOglase([
+        ...oglasi,
+        {
+          name: inputTextName,
+          category: inputTextCategory,
+          price: inputTextPrice,
+          photoUrl: inputTextPhotoURL,
+        },
+      ]);
+    }
   };
 
   // jel moguce ove preko 1 fje napravit?
@@ -63,6 +70,7 @@ const Unos = ({
       <div className={gumb ? "" : "hidden"}>
         <form>
           <h2 className="new-title">Novi oglas </h2>
+
           <input
             type="text"
             placeholder="Name"
@@ -78,20 +86,19 @@ const Unos = ({
             <option value="Car">Car</option>
             <option value="Bike">Bike</option>
           </select>
-
           <input
             type="text"
             placeholder="Price"
             id="inputPrice"
             onChange={priceHandler}
           />
-
           <input
             type="text"
             placeholder="Photo URL"
             id="inputPhotoURL"
             onChange={photoURLHandler}
           />
+
           <div className="btns">
             <button type="button" className="cancelBtn" onClick={buttonHandler}>
               <FontAwesomeIcon icon={faXmark} />
