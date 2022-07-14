@@ -1,14 +1,7 @@
 /* TODO
--unos oglasa preko neke input forme - na gumb DODAJ OGLAS se otkrije taj dio stranice - done
--odabir kategorije oglasa - dropdown (motori, kompjuteri i sl) - done
--filtracija pomocu kategorije - done
--prikaz oglasa (slika i detalji) - probaj kad se klikne na nju da se otvori onak ko prozor koji je inace sakriven preko cijele stranice
--horizontalni scroll oglasa
 -light/dark color theme --> styled components
--dodaj da se ne suzava kad ih se puno doda nego da izlaze iz okvira
--jel moguce inputhandlere preko 1 fje napravit?
+-jel moguce inputhandlere preko 1 fje napravit? - mogu se stavit direktno u input, al je onda ruzniji kod
 -dodaj show info gumb (preko routea) koji preko indexa pokazuje odabrani oglas i ostale info o njemu koje se unose npr adresa, informacije dodatne i sl, a da se ne vidi na pocetnoj - ikone s font awesomea npr lokacija, telefon itd
--pretvori css u scss
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Chivo&family=The+Nautigal&display=swap");
@@ -68,9 +61,6 @@ p {
   color: var(--white);
 }
 
-// OVO VRATI NA KRAJU i dodaj da je ovaj info udaljen od bottoma na svakom jednako
-// probaj maknut onih 5 i nariktat da se uvijek skroz lijevo pomaknu jer mislim da to ne dela skroz dobro
-// makni tockice
 .oglasi {
   position: relative;
   height: 430px;
@@ -131,6 +121,10 @@ img {
   width: 90%;
   margin: auto;
   border-radius: 30px;
+
+  & .title-ad-group {
+    color: var(--lightgrey);
+  }
 }
 
 button {

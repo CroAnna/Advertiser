@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import Info from "./Info";
 import { Link } from "react-router-dom";
 
 const Oglas = ({ name, category, price, photoUrl }) => {

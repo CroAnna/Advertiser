@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import themeIcon from "../Images/theme.png";
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
     <div>
       <img src={themeIcon} alt="theme-icon" className="theme" />
       <Link to="/">
-        <h1>Oglasnik</h1>
+        <h1>Advertiser</h1>
       </Link>
     </div>
   );

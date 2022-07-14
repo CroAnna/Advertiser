@@ -71,12 +71,12 @@ const Unos = ({
           onClick={buttonHandler}
           className={gumb ? "hidden" : "btn-middle"}
         >
-          DODAJ OGLAS
+          ADD NEW AD
         </button>
       </div>
       <div className={gumb ? "" : "hidden"}>
         <form>
-          <h2 className="new-title">Novi oglas </h2>
+          <h2 className="new-title">New ad information: </h2>
 
           <input
             type="text"

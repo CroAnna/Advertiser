@@ -58,9 +58,9 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
   };
 
   useEffect(() => {
-    // kad nema niceg u toj kategoriji
+    // when there are no ads in chosen category
     if (filtOglasi.length === 0) {
-      // console.log("prazno");
+      console.log("empty");
     }
   }, [filtOglasi]);
 
@@ -92,7 +92,7 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
             <option value="Cars">Cars</option>
             <option value="Bikes">Bikes</option>
           </select>
-          <h2>Najnoviji oglasi</h2>
+          <h2 className="title-ad-group">Recommended ads</h2>
         </div>
         <div className="oglasi">
           <div className="oglasi-map">
