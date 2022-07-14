@@ -192,7 +192,8 @@ form select {
   border: var(--bg) 2px solid;
   padding-left: 25px;
   font-size: larger;
-  color: var(--bg);
+  color: var(--mediumgrey2);
+  background-color: var(--white);
 }
 
 #filtration {
@@ -211,7 +212,8 @@ form select {
 }
 
 ::placeholder {
-  color: var(--bg);
+  color: var(--mediumgrey2);
+  opacity: 1;
 }
 
 .hidden {

@@ -39,6 +39,13 @@ const Unos = ({
           photoUrl: inputTextPhotoURL,
         },
       ]);
+      // clears input values:
+      setInputTextName("");
+      setInputTextCategory("");
+      setInputTextPrice("");
+      setInputTextPhotoURL("");
+    } else {
+      alert("Please fill all input fields.");
     }
   };
 
@@ -76,8 +83,15 @@ const Unos = ({
             placeholder="Name"
             id="inputName"
             onChange={nameHandler}
+            value={inputTextName}
+            // value is used to connect useState so it's empty after submitting
           />
-          <select name="categories" id="categories" onChange={categoryHandler}>
+          <select
+            name="categories"
+            id="categories"
+            onChange={categoryHandler}
+            value={inputTextCategory}
+          >
             <option hidden value="">
               Category
             </option>
@@ -91,12 +105,14 @@ const Unos = ({
             placeholder="Price"
             id="inputPrice"
             onChange={priceHandler}
+            value={inputTextPrice}
           />
           <input
             type="text"
             placeholder="Photo URL"
             id="inputPhotoURL"
             onChange={photoURLHandler}
+            value={inputTextPhotoURL}
           />
 
           <div className="btns">
