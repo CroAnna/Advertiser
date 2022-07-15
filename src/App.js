@@ -125,7 +125,7 @@ function App() {
               </Fragment>
             }
           ></Route>
-          <Route path="/info" element={<Info />}></Route>
+          <Route path="/info/:name" element={<Info oglasi={oglasi} />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
