@@ -57,13 +57,6 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
     setSelectedFilter(e.target.value);
   };
 
-  useEffect(() => {
-    // when there are no ads in chosen category
-    if (filtOglasi.length === 0) {
-      console.log("empty");
-    }
-  }, [filtOglasi]);
-
   function SampleNextArrow(props) {
     const { onClick } = props;
     return (
