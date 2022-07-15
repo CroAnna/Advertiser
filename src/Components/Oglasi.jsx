@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Oglas from "./Oglas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
@@ -102,6 +102,7 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
                     price={oglas.price}
                     key={index}
                     photoUrl={oglas.photoUrl}
+                    year={oglas.year}
                   />
                 )
               )}

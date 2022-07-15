@@ -15,6 +15,8 @@ const Unos = ({
   setInputTextPrice,
   inputTextPhotoURL,
   setInputTextPhotoURL,
+  inputYear,
+  setInputYear,
 }) => {
   const buttonHandler = () => {
     setGumb(!gumb); // it will toggle
@@ -37,6 +39,7 @@ const Unos = ({
           category: inputTextCategory,
           price: inputTextPrice,
           photoUrl: inputTextPhotoURL,
+          year: inputYear,
         },
       ]);
       // clears input values:
@@ -44,6 +47,7 @@ const Unos = ({
       setInputTextCategory("");
       setInputTextPrice("");
       setInputTextPhotoURL("");
+      setInputYear("");
     } else {
       alert("Please fill all input fields.");
     }
@@ -61,6 +65,9 @@ const Unos = ({
   };
   const photoURLHandler = (e) => {
     setInputTextPhotoURL(e.target.value);
+  };
+  const yearHandler = (e) => {
+    setInputYear(e.target.value);
   };
 
   return (
@@ -80,7 +87,7 @@ const Unos = ({
 
           <input
             type="text"
-            placeholder="Name"
+            placeholder="Name *"
             id="inputName"
             onChange={nameHandler}
             value={inputTextName}
@@ -93,7 +100,7 @@ const Unos = ({
             value={inputTextCategory}
           >
             <option hidden value="">
-              Category
+              Category *
             </option>
             <option value="Animal">Animal</option>
             <option value="Car">Car</option>
@@ -101,17 +108,30 @@ const Unos = ({
           </select>
           <input
             type="text"
-            placeholder="Price"
+            placeholder="Price *"
             id="inputPrice"
             onChange={priceHandler}
             value={inputTextPrice}
           />
           <input
             type="text"
-            placeholder="Photo URL"
+            placeholder="Photo URL *"
             id="inputPhotoURL"
             onChange={photoURLHandler}
             value={inputTextPhotoURL}
+          />
+
+          <input
+            className={
+              inputTextCategory === "Car" || inputTextCategory === "Bike"
+                ? ""
+                : "hidden"
+            }
+            type="text"
+            placeholder="Year of manufacture: "
+            id="yearManufacture"
+            onChange={yearHandler}
+            value={inputYear}
           />
 
           <div className="btns">

@@ -14,6 +14,7 @@ function App() {
       price: "35000€",
       photoUrl:
         "https://mcn-images.bauersecure.com/wp-images/4552/bmw-g310gs-40-years.jpg",
+      year: "2018",
     },
     {
       name: "Cow",
@@ -21,6 +22,7 @@ function App() {
       price: "1000€",
       photoUrl:
         "https://i0.hippopx.com/photos/1014/166/417/calf-cow-nature-beef-preview.jpg",
+      year: "",
     },
     {
       name: "Chicken",
@@ -28,6 +30,7 @@ function App() {
       price: "5€",
       photoUrl:
         "https://images.unsplash.com/photo-1620136717591-841a4da27e23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      year: "",
     },
     {
       name: "Audi R8",
@@ -35,6 +38,7 @@ function App() {
       price: "1000000€",
       photoUrl:
         "https://www.slobodenpecat.mk/wp-content/uploads/2019/08/promo3993.jpg",
+      year: "2018",
     },
     {
       name: "Labrador puppies",
@@ -42,6 +46,7 @@ function App() {
       price: "200€",
       photoUrl:
         "https://www.sisak.info/wp-content/uploads/2020/05/funniest-cutest-labrador-puppies-2-funny-puppy-videos-2020.jpg",
+      year: "",
     },
     {
       name: "Mercedes AMG GT",
@@ -49,6 +54,7 @@ function App() {
       price: "2000000€",
       photoUrl:
         "https://www.driveteam.hr/wp-content/uploads/Mercedes-AMG-GT-Black-series-cijena-narudzba-4.jpg",
+      year: "2021",
     },
   ]);
 
@@ -58,6 +64,7 @@ function App() {
   const [inputTextCategory, setInputTextCategory] = useState("");
   const [inputTextPrice, setInputTextPrice] = useState("");
   const [inputTextPhotoURL, setInputTextPhotoURL] = useState("");
+  const [inputYear, setInputYear] = useState("");
 
   const [gumb, setGumb] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -121,6 +128,8 @@ function App() {
                   setInputTextPrice={setInputTextPrice}
                   inputTextPhotoURL={inputTextPhotoURL}
                   setInputTextPhotoURL={setInputTextPhotoURL}
+                  inputYear={inputYear}
+                  setInputYear={setInputYear}
                 />
               </Fragment>
             }
