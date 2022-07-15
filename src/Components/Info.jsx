@@ -32,7 +32,7 @@ const Info = ({ oglasi }) => {
                   <h2 className="title">{oglas.name}</h2>
                   <p>{`Price: ${oglas.price}`}</p>
                   <p>{`Category: ${oglas.category}`}</p>
-                  <p>{`Location: ${oglas.name}`}</p>
+                  <p>{`Location: ${oglas.location}`}</p>
                   <p
                     className={
                       oglas.category === "Car" || oglas.category === "Bike"
@@ -40,7 +40,7 @@ const Info = ({ oglasi }) => {
                         : "hidden"
                     }
                   >{`Year of manufacture: ${oglas.year}`}</p>
-                  <p>{`About: Pellentesque posuere eros dolor, eu porta magna malesuada id. Fusce dignissim elit vitae dui facilisis, vel elementum neque sollicitudin. Duis porttitor turpis in erat posuere auctor. Donec ullamcorper elit malesuada bibendum viverra. Nulla elementum metus quis sapien accumsan, et ultricies dui auctor. Duis eleifend, leo non elementum euismod, est dolor posuere elit, eu vehicula justo ante sed tellus. In at elit eu nisi euismod pretium. Aliquam commodo et ex ut finibus. Curabitur vitae ante mi. Sed vel dignissim dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis porta quam est, non bibendum lacus hendrerit in. Aliquam molestie egestas ipsum, non ultricies magna pharetra vehicula. Morbi sit amet turpis condimentum, venenatis augue et, luctus nisi.Curabitur vitae ante mi. Sed vel dignissim dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis porta quam est, non bibendum lacus hendrerit in. Aliquam molestie egestas ipsum, non ultricies magna pharetra vehicula. Morbi sit amet turpis condimentum, venenatis augue et, luctus nisi. Curabitur vitae ante mi. Sed vel dignissim dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis porta quam est, non bibendum lacus hendrerit in. Aliquam molestie egestas ipsum, non ultricies magna pharetra vehicula. Morbi sit amet turpis condimentum, venenatis augue et, luctus nisi.`}</p>
+                  <p>{`About: ${oglas.about}`}</p>
                 </div>
               </div>
             )

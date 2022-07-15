@@ -17,6 +17,10 @@ const Unos = ({
   setInputTextPhotoURL,
   inputYear,
   setInputYear,
+  setInputAbout,
+  inputAbout,
+  inputLocation,
+  setInputLocation,
 }) => {
   const buttonHandler = () => {
     setGumb(!gumb); // it will toggle
@@ -27,11 +31,10 @@ const Unos = ({
       inputTextName !== "" &&
       inputTextCategory !== "" &&
       inputTextPrice !== "" &&
-      inputTextPhotoURL !== ""
+      inputTextPhotoURL !== "" &&
+      inputLocation !== ""
     ) {
       e.preventDefault();
-      console.log("sve ispunjeno --> kliknut submit");
-
       setOglase([
         ...oglasi,
         {
@@ -40,6 +43,8 @@ const Unos = ({
           price: inputTextPrice,
           photoUrl: inputTextPhotoURL,
           year: inputYear,
+          about: inputAbout,
+          location: inputLocation,
         },
       ]);
       // clears input values:
@@ -48,6 +53,8 @@ const Unos = ({
       setInputTextPrice("");
       setInputTextPhotoURL("");
       setInputYear("");
+      setInputAbout("");
+      setInputLocation("");
     } else {
       alert("Please fill all input fields.");
     }
@@ -68,6 +75,12 @@ const Unos = ({
   };
   const yearHandler = (e) => {
     setInputYear(e.target.value);
+  };
+  const aboutHandler = (e) => {
+    setInputAbout(e.target.value);
+  };
+  const locationHandler = (e) => {
+    setInputLocation(e.target.value);
   };
 
   return (
@@ -120,6 +133,20 @@ const Unos = ({
             onChange={photoURLHandler}
             value={inputTextPhotoURL}
           />
+          <input
+            type="text"
+            placeholder="Location *"
+            id="inputLocation"
+            onChange={locationHandler}
+            value={inputLocation}
+          />
+          <input
+            type="text"
+            placeholder="About"
+            id="inputAbout"
+            onChange={aboutHandler}
+            value={inputAbout}
+          />
 
           <input
             className={
@@ -128,7 +155,7 @@ const Unos = ({
                 : "hidden"
             }
             type="text"
-            placeholder="Year of manufacture: "
+            placeholder="Year of manufacture "
             id="yearManufacture"
             onChange={yearHandler}
             value={inputYear}

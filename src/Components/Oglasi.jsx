@@ -102,7 +102,6 @@ const Oglasi = ({ setSelectedFilter, filtOglasi }) => {
                     price={oglas.price}
                     key={index}
                     photoUrl={oglas.photoUrl}
-                    year={oglas.year}
                   />
                 )
               )}
