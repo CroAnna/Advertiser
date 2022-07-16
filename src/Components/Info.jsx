@@ -33,13 +33,18 @@ const Info = ({ oglasi }) => {
                   <p>{`Price: ${oglas.price}`}</p>
                   <p>{`Category: ${oglas.category}`}</p>
                   <p>{`Location: ${oglas.location}`}</p>
-                  <p
+                  <div
                     className={
                       oglas.category === "Car" || oglas.category === "Bike"
-                        ? ""
+                        ? "about-block"
                         : "hidden"
                     }
-                  >{`Year of manufacture: ${oglas.year}`}</p>
+                  >
+                    <p>{`Year of manufacture: ${oglas.year}`}</p>
+                    <p> {`Engine type: ${oglas.engine}`}</p>
+                    <p>{`Transmission: ${oglas.transmission}`}</p>
+                  </div>
+
                   <p>{`About: ${oglas.about}`}</p>
                 </div>
               </div>

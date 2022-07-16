@@ -21,6 +21,10 @@ const Unos = ({
   inputAbout,
   inputLocation,
   setInputLocation,
+  inputEngine,
+  setInputEngine,
+  inputTransmission,
+  setInputTransmission,
 }) => {
   const buttonHandler = () => {
     setGumb(!gumb); // it will toggle
@@ -45,6 +49,8 @@ const Unos = ({
           year: inputYear,
           about: inputAbout,
           location: inputLocation,
+          transmission: inputTransmission,
+          engine: inputEngine,
         },
       ]);
       // clears input values:
@@ -55,6 +61,8 @@ const Unos = ({
       setInputYear("");
       setInputAbout("");
       setInputLocation("");
+      setInputEngine("");
+      setInputTransmission("");
     } else {
       alert("Please fill all input fields.");
     }
@@ -81,6 +89,12 @@ const Unos = ({
   };
   const locationHandler = (e) => {
     setInputLocation(e.target.value);
+  };
+  const engineHandler = (e) => {
+    setInputEngine(e.target.value);
+  };
+  const transmissionHandler = (e) => {
+    setInputTransmission(e.target.value);
   };
 
   return (
@@ -160,6 +174,35 @@ const Unos = ({
             onChange={yearHandler}
             value={inputYear}
           />
+          <input
+            className={
+              inputTextCategory === "Car" || inputTextCategory === "Bike"
+                ? ""
+                : "hidden"
+            }
+            type="text"
+            placeholder="Engine type "
+            id="inputEngine"
+            onChange={engineHandler}
+            value={inputEngine}
+          />
+          <select
+            className={
+              inputTextCategory === "Car" || inputTextCategory === "Bike"
+                ? ""
+                : "hidden"
+            }
+            name="inputTransmission"
+            id="inputTransmission"
+            onChange={transmissionHandler}
+            value={inputTransmission}
+          >
+            <option hidden value="">
+              Transmission
+            </option>
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+          </select>
 
           <div className="btns">
             <button type="button" className="cancelBtn" onClick={buttonHandler}>
