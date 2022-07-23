@@ -25,6 +25,8 @@ const Unos = ({
   setInputEngine,
   inputTransmission,
   setInputTransmission,
+  inputCoordinates,
+  setInputCoordinates,
 }) => {
   const buttonHandler = () => {
     setGumb(!gumb); // it will toggle
@@ -49,6 +51,7 @@ const Unos = ({
           year: inputYear,
           about: inputAbout,
           location: inputLocation,
+          coordinates: inputCoordinates,
           transmission: inputTransmission,
           engine: inputEngine,
         },
@@ -61,6 +64,7 @@ const Unos = ({
       setInputYear("");
       setInputAbout("");
       setInputLocation("");
+      setInputCoordinates("");
       setInputEngine("");
       setInputTransmission("");
     } else {
@@ -95,6 +99,9 @@ const Unos = ({
   };
   const transmissionHandler = (e) => {
     setInputTransmission(e.target.value);
+  };
+  const coordinatesHandler = (e) => {
+    setInputCoordinates(e.target.value);
   };
 
   return (
@@ -153,6 +160,13 @@ const Unos = ({
             id="inputLocation"
             onChange={locationHandler}
             value={inputLocation}
+          />
+          <input
+            type="text"
+            placeholder="Coordinates"
+            id="inputCoordinates"
+            onChange={coordinatesHandler}
+            value={inputCoordinates}
           />
           <input
             type="text"

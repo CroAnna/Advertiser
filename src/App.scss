@@ -303,3 +303,14 @@ form {
     }
   }
 }
+
+.map {
+  width: 80%;
+  margin: 10px auto;
+  background-color: var(--grey);
+  height: 400px;
+  padding-bottom: 50px;
+  & .slika {
+    height: 160px;
+  }
+}
