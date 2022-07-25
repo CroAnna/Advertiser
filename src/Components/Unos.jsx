@@ -38,7 +38,8 @@ const Unos = ({
       inputTextCategory !== "" &&
       inputTextPrice !== "" &&
       inputTextPhotoURL !== "" &&
-      inputLocation !== ""
+      inputLocation !== "" &&
+      inputCoordinates !== ""
     ) {
       e.preventDefault();
       setOglase([
@@ -163,7 +164,7 @@ const Unos = ({
           />
           <input
             type="text"
-            placeholder="Coordinates"
+            placeholder="Coordinates * (for example 15,25)"
             id="inputCoordinates"
             onChange={coordinatesHandler}
             value={inputCoordinates}

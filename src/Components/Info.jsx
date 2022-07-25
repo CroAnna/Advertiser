@@ -6,7 +6,6 @@ import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import Leaflet from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useEffect } from "react";
 
 const Info = ({ oglasi }) => {
   let { name } = useParams(); // info/:{name}
@@ -17,11 +16,6 @@ const Info = ({ oglasi }) => {
   const loadHandler = () => {
     console.log("bok");
   };
-
-  useEffect(() => {
-    console.log("bok");
-    // console.log(oglas.coordinates);
-  }, []);
 
   return (
     <div>
