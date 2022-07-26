@@ -140,6 +140,18 @@ function App() {
     filterHandler();
   }, [oglasi, selectedFilter]); // run when oglasi array or selected filter changes
 
+  // localstorage
+  useEffect(() => {
+    const data = localStorage.getItem("oglasi");
+    if (data) {
+      // if something exists
+      setOglase(JSON.parse(data));
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("oglasi", JSON.stringify(oglasi));
+  }, [oglasi]);
+
   return (
     <BrowserRouter>
       <div className="App ">
