@@ -1,78 +1,12 @@
 import React from "react";
-import Oglas from "./Oglas";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import UserAdList from "./UserAdList";
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-function SampleNextArrow(props) {
-  const { onClick } = props;
-  return (
-    <div className="arrow" onClick={onClick}>
-      <FontAwesomeIcon icon={faAngleRight} />
-    </div>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { onClick } = props;
-  return (
-    <div className="arrow" onClick={onClick}>
-      <FontAwesomeIcon icon={faAngleLeft} />
-    </div>
-  );
-}
-
 const User = ({ oglasi }) => {
   const [filtUserAds, setFiltUserAds] = useState([]);
-  const settings = {
-    dots: true,
-    infinite: false,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    speed: 500,
 
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1740,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 1400,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 1100,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
   useEffect(() => {
     function filterUserHandler() {
       setFiltUserAds(oglasi.filter((oglas) => oglas.added === true));
@@ -80,29 +14,25 @@ const User = ({ oglasi }) => {
     filterUserHandler();
   }, [oglasi]);
   return (
-    <div className="najnovijiOglasi">
+    <div className="user-container">
       <h2>My profile</h2>
-      <div className="oglasi">
-        <div className="oglasi-map">
-          <Slider {...settings} style={{ display: "flex" }}>
-            {/* overrides display: block from slick.css*/}
-            {filtUserAds.map(
-              (
-                oglas,
-                index // goes through filtered array
-              ) => (
-                <Oglas
-                  name={oglas.name}
-                  category={oglas.category}
-                  price={oglas.price}
-                  key={index}
-                  photoUrl={oglas.photoUrl}
-                  added={oglas.added}
-                />
-              )
-            )}
-          </Slider>
-        </div>
+      <div className="user-ads">
+        <h3>My ads</h3>
+        {filtUserAds.map(
+          (
+            oglas,
+            index // goes through filtered array
+          ) => (
+            <UserAdList
+              name={oglas.name}
+              category={oglas.category}
+              price={oglas.price}
+              key={index}
+              photoUrl={oglas.photoUrl}
+              added={oglas.added}
+            />
+          )
+        )}
       </div>
     </div>
   );

@@ -162,7 +162,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App ">
-        <Header />
+        <Header setSelectedFilter={setSelectedFilter} />
         <Routes>
           <Route
             index
