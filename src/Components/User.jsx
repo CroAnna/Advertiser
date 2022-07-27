@@ -6,6 +6,8 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -26,6 +28,7 @@ function SamplePrevArrow(props) {
 }
 
 const User = ({ oglasi }) => {
+  const [filtUserAds, setFiltUserAds] = useState([]);
   const settings = {
     dots: true,
     infinite: false,
@@ -70,6 +73,12 @@ const User = ({ oglasi }) => {
       },
     ],
   };
+  useEffect(() => {
+    function filterUserHandler() {
+      setFiltUserAds(oglasi.filter((oglas) => oglas.added === true));
+    }
+    filterUserHandler();
+  }, [oglasi]);
   return (
     <div className="najnovijiOglasi">
       <h2>My profile</h2>
@@ -77,7 +86,7 @@ const User = ({ oglasi }) => {
         <div className="oglasi-map">
           <Slider {...settings} style={{ display: "flex" }}>
             {/* overrides display: block from slick.css*/}
-            {oglasi.map(
+            {filtUserAds.map(
               (
                 oglas,
                 index // goes through filtered array

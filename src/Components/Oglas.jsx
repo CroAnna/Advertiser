@@ -9,7 +9,7 @@ const Oglas = ({ name, category, price, photoUrl, added }) => {
       <h2>{name}</h2>
       <p>Category: {category}</p>
       <p>Price: {price}</p>
-      <p>Added:{added}</p>
+      {/* <p>Added:{added}</p> */}
       <div className="img-div">
         <img src={photoUrl} alt={name} />
       </div>
