@@ -55,6 +55,7 @@ const Unos = ({
           coordinates: inputCoordinates,
           transmission: inputTransmission,
           engine: inputEngine,
+          added: "true",
         },
       ]);
       // clears input values:

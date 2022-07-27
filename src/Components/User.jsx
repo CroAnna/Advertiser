@@ -88,6 +88,7 @@ const User = ({ oglasi }) => {
                   price={oglas.price}
                   key={index}
                   photoUrl={oglas.photoUrl}
+                  added={oglas.added}
                 />
               )
             )}
