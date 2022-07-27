@@ -56,6 +56,7 @@ const Unos = ({
           transmission: inputTransmission,
           engine: inputEngine,
           added: true,
+          id: Math.random() * 1000,
         },
       ]);
       // clears input values:

@@ -1,18 +1,14 @@
 import React from "react";
 import UserAdList from "./UserAdList";
-
-import { useState } from "react";
 import { useEffect } from "react";
 
-const User = ({ oglasi }) => {
-  const [filtUserAds, setFiltUserAds] = useState([]);
-
+const User = ({ oglasi, setOglase, filtUserAds, setFiltUserAds }) => {
   useEffect(() => {
     function filterUserHandler() {
       setFiltUserAds(oglasi.filter((oglas) => oglas.added === true));
     }
     filterUserHandler();
-  }, [oglasi]);
+  }, [oglasi, setFiltUserAds]);
   return (
     <div className="user-container">
       <h2>My profile</h2>
@@ -27,9 +23,11 @@ const User = ({ oglasi }) => {
               name={oglas.name}
               category={oglas.category}
               price={oglas.price}
-              key={index}
-              photoUrl={oglas.photoUrl}
-              added={oglas.added}
+              key={oglas.id}
+              filtUserAds={filtUserAds}
+              oglasi={oglasi}
+              setOglase={setOglase}
+              oglas={oglas}
             />
           )
         )}

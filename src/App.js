@@ -22,7 +22,8 @@ function App() {
       coordinates: "45.55637976906288, 15.532034270276464",
       engine: "Water/oil-cooled 4-cylinder 4-stroke in-line",
       transmission: "Manual",
-      added: true,
+      added: false,
+      id: Math.random() * 1000,
     },
     {
       name: "Cow",
@@ -38,6 +39,7 @@ function App() {
       engine: "",
       transmission: "",
       added: false,
+      id: Math.random() * 1000,
     },
 
     {
@@ -54,6 +56,7 @@ function App() {
       engine: "4.2-liter V8",
       transmission: "Manual",
       added: false,
+      id: Math.random() * 1000,
     },
     {
       name: "Labrador puppies",
@@ -69,6 +72,7 @@ function App() {
       engine: "",
       transmission: "",
       added: false,
+      id: Math.random() * 1000,
     },
     {
       name: "Mercedes AMG GT",
@@ -84,6 +88,7 @@ function App() {
       engine: "twin-turbo 4.0-liter V8",
       transmission: "Automatic",
       added: true,
+      id: Math.random() * 1000,
     },
     {
       name: "Chicken",
@@ -97,10 +102,12 @@ function App() {
       location: "Vukovar, Croatia",
       coordinates: "45.33567509312687, 18.995887360434526",
       added: true,
+      id: Math.random() * 1000,
     },
   ]);
 
   const [filtOglasi, setFiltOglasi] = useState([]);
+  const [filtUserAds, setFiltUserAds] = useState([]);
 
   const [inputTextName, setInputTextName] = useState("");
   const [inputTextCategory, setInputTextCategory] = useState("");
@@ -204,7 +211,17 @@ function App() {
             }
           ></Route>
           <Route path="/info/:name" element={<Info oglasi={oglasi} />}></Route>
-          <Route path="/user" element={<User oglasi={oglasi} />}></Route>
+          <Route
+            path="/user"
+            element={
+              <User
+                oglasi={oglasi}
+                setOglase={setOglase}
+                filtUserAds={filtUserAds}
+                setFiltUserAds={setFiltUserAds}
+              />
+            }
+          ></Route>
         </Routes>
       </div>
     </BrowserRouter>
