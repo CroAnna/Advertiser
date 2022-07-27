@@ -5,6 +5,7 @@ import Unos from "./Components/Unos";
 import Header from "./Components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Info from "./Components/Info";
+import User from "./Components/User";
 
 function App() {
   const [oglasi, setOglase] = useState([
@@ -21,6 +22,7 @@ function App() {
       coordinates: "45.55637976906288, 15.532034270276464",
       engine: "Water/oil-cooled 4-cylinder 4-stroke in-line",
       transmission: "Manual",
+      added: false,
     },
     {
       name: "Cow",
@@ -35,6 +37,7 @@ function App() {
       coordinates: "45.61790387179181, 15.504751539133979",
       engine: "",
       transmission: "",
+      added: false,
     },
 
     {
@@ -50,6 +53,7 @@ function App() {
       coordinates: "44.959749170243775, 13.851290329819134",
       engine: "4.2-liter V8",
       transmission: "Manual",
+      added: false,
     },
     {
       name: "Labrador puppies",
@@ -64,6 +68,7 @@ function App() {
       coordinates: "45.95363973430107, 16.606616173115118",
       engine: "",
       transmission: "",
+      added: false,
     },
     {
       name: "Mercedes AMG GT",
@@ -78,6 +83,7 @@ function App() {
       coordinates: "46.3259352957996, 16.289347175859813",
       engine: "twin-turbo 4.0-liter V8",
       transmission: "Automatic",
+      added: false,
     },
     {
       name: "Chicken",
@@ -90,6 +96,7 @@ function App() {
         "3 month old animal, type is chicken Hrvatica - a Croatian breed of domestic chicken. The breed is widespread in almost all of Croatia and the Balkans. The breed was developed in 1917 by Ivan Lakuš, in the village of Torčec in Podravina Province.",
       location: "Vukovar, Croatia",
       coordinates: "45.33567509312687, 18.995887360434526",
+      added: false,
     },
   ]);
 
@@ -197,6 +204,7 @@ function App() {
             }
           ></Route>
           <Route path="/info/:name" element={<Info oglasi={oglasi} />}></Route>
+          <Route path="/user" element={<User oglasi={oglasi} />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

@@ -223,11 +223,14 @@ form {
   background-color: var(--lightorange);
 }
 
-.theme {
+.user-icon {
   float: right;
   position: absolute;
   right: 0;
-  width: 70px;
+  color: var(--darkgrey);
+  width: 35px;
+  padding: 18px;
+  height: 35px;
   margin-top: 40px;
   margin-right: 50px;
   background-color: var(--lightgrey);
